@@ -58,3 +58,123 @@ VALUES (
     );
 
 SELECT * FROM products;
+
+-- Exercício 1
+
+-- Get All Users
+
+SELECT * FROM users;
+
+-- Retorna todos os usuários cadastrados
+
+-- Get All Products
+
+SELECT * FROM products;
+
+-- retorna todos os produtos cadastrados
+
+-- Search Product by name
+
+-- mocke um termo de busca, por exemplo "monitor"
+
+-- retorna o resultado baseado no termo de busca
+
+SELECT * FROM products WHERE name = "camisa";
+
+--retorna o resultado baseado no termo de busca
+
+-- Create User
+
+--mocke um novo usuário
+
+-- insere o item mockado na tabela users
+
+INSERT INTO
+    users(id, email, password)
+VALUES (
+        '04',
+        'davi@email.com',
+        '123456'
+    );
+
+-- Create Product
+
+-- mocke um novo produto
+
+-- insere o item mockado na tabela products
+
+INSERT INTO
+    products(id, name, price, category)
+VALUES (
+        '203',
+        'Notebook',
+        4250.90,
+        'eletrônicos'
+    );
+
+-- Exercício 2
+
+-- Get Products by id
+
+-- mocke uma id
+
+-- busca baseada no valor mockado
+
+SELECT * FROM products WHERE id = '203';
+
+-- Delete User by i
+
+-- mocke uma id
+
+-- delete a linha baseada no valor mockado
+
+DELETE FROM users WHERE id = '04';
+
+-- Delete Product by id
+
+-- mocke uma id
+
+-- delete a linha baseada no valor mockado
+
+DELETE FROM products WHERE id = '203';
+
+-- Edit User by id
+
+-- mocke valores para editar um user
+
+-- edite a linha baseada nos valores mockados
+
+UPDATE users SET email = 'fulano@email.com' WHERE id = '01';
+
+-- Edit Product by id
+
+-- mocke valores para editar um product
+
+-- edite a linha baseada nos valores mockados
+
+UPDATE products SET price = 129.99 WHERE id = '01';
+
+-- Exercício 3
+
+-- Get All Users REFATORADO (retorna o resultado ordenado pela coluna email em ordem crescente)
+
+SELECT * FROM users ORDER BY email ASC;
+
+-- Get All Products versão 1 REFATORADO
+
+-- (retorna o resultado ordenado pela coluna price em ordem crescente)
+
+-- (limite o resultado em 20 iniciando pelo primeiro item)
+
+SELECT * FROM products ORDER BY price ASC LIMIT 20 OFFSET 0;
+
+-- Get All Products versão 2 REFATORADO
+
+-- (mocke um intervalo de preços, por exemplo entre 100.00 e 300.00)
+
+-- (retorna os produtos com preços dentro do intervalo mockado em ordem crescente)
+
+SELECT *
+FROM products
+WHERE price >= 120 AND price <= 500
+ORDER BY price ASC;
